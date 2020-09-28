@@ -1,0 +1,37 @@
+@font-face{
+    font-family: "Circular";
+    font-weight: normal;
+    src: url("book.otf");
+}
+@font-face{
+    font-family: "Circular";
+    font-weight: normal;
+    font-style: italic;
+    src: url("book-italic.otf");
+}
+@font-face{
+    font-family: "Circular";
+    font-weight: 900;
+    src: url("black.otf")
+}
+@font-face{
+    font-family: "Circular";
+    font-weight: 900;
+    font-style: italic; 
+    src: url("black-italic.otf");
+}
+@font-face{
+    font-family: "Circular";
+    font-weight: bold;
+    src: url("bold.otf");
+}
+@font-face{
+    font-family: "Circular";
+    font-weight: bold;
+    font-style: italic;
+    src: url("bold-italic.otf");
+}
+
+.clr-bold{
+    font-weight:bold;
+}

@@ -1,0 +1,154 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+    font-family: 'Circular';
+    font-weight: normal;
+}
+
+#dark-navbar{
+    border-bottom: 0.15em solid #111;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#logo{
+    display: inline-block;
+    height: 100%;
+    margin-left:10px;
+}
+
+#logo>img, label>img{
+    height:32px;
+    vertical-align: middle;
+}
+
+.material-icons{
+    font-size: 22px;
+    vertical-align: middle !important;
+}
+
+#content-wrapper{
+    margin-top: 45px;
+    width: 97%;
+}
+
+#time {
+    color: #ccc;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#time-mer {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#date {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.display-ib{
+    margin-left:2px;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+#current-subject{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+#current-room, #remain, #current-period{
+    text-align: center;
+    color: #bbb;
+}
+
+#remain{
+    margin-bottom: 5px;
+}
+
+#minutes-left{
+    text-align:center;
+    font-weight: 900;
+    font-size: 120px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+#in-progress-info{
+    margin-bottom: 30px;
+}
+
+#next-period-text{
+    text-align: center;
+    font-size: 16px;
+    color: #aaa;
+}
+
+#next-period-name{
+    text-align:center;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+}
+
+#next-period-details{
+    color: #aaa;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.round-border {
+    display: block;
+    width: 130px;
+    height: 4px;
+    border-radius: 2px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.btn-flat {
+    text-transform: none !important;
+    font-weight: bold;
+}
+
+.btn-edit{
+    text-transform: none;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 150px;
+    display: table;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h4{
+    font-weight: 900;
+}
+
+.modal{
+    color: black;
+}
+
+.subject-list-edit{
+    border-bottom: 1px solid black;
+    vertical-align: center;
+    clear: both;
+}
+
+.subject-list-edit-name{
+    font-size: 18px;
+    font-weight: bold;  
+    padding: 2px 0 2px 0;
+    float: left;
+}

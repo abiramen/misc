@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Timetablr 2</title>
+        <meta name="theme-color" content="#039be5">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <link rel="icon" type="image/png" href="img/logo-bg.png" />
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="manifest" href="manifest.json">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="black" id="dark-navbar">
+            <div class="nav-wrapper">
+                
+                <ul class="left">
+                    <li>
+                        <a href="#" id="logo">
+                            <img id="logo-img" src="img/tmblr-text.png" />
+                        </a>
+                        <div id="time" class="hide-on-small-only display-ib"><span id="time-h"></span>:<span
+                                id="time-m">Loading</span><span id="time-mer"> Mer</span></div>
+                        <div id="date" class="hide-on-small-only display-ib">Friday, February 7</div>
+                    </li>
+                </ul>
+                <ul class="right">
+                    <li>
+                        <a href="#timetable-editor" class="modal-trigger tooltipped" data-position="bottom" outDuration="20" enterDelay="400" data-tooltip="Edit timetable"><span class="material-icons">edit</span></a>
+                    </li>
+                    <li>
+                        <a href="#timetable-importer" class="modal-trigger tooltipped" data-position="bottom" outDuration="20" enterDelay="400" data-tooltip="Import timetable"><span class="material-icons">file_upload</span></a>
+                    </li>
+                    <li>
+                        <a href="#timetable-settings" class="modal-trigger tooltipped" data-position="bottom" outDuration="20" enterDelay="400" data-tooltip="Settings"><span class="material-icons">settings</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="content-wrapper">
+            <div class="row">
+                <div class="col s12 l8">
+                    <div id="current-subject">Period 9</div>
+                    <!--canvas width="90%" height="auto"></!--canvas-->
+                    <div id="in-progress-info">
+                        <div id="current-room"></div>
+                        <div id="minutes-left">-</div>
+                        <div id="remain">of <span id="minutes-remain"></span> minutes<br>remain</div>
+                        <div id="current-period"></div>
+                    </div>
+                    <div id="next-period-info">
+                        <div id="next-period-text"><span id="round-border">Next up:</span></div>
+                        <div id="next-period-name">This is still</div>
+                        <div class="round-border"></div>
+                        <div id="next-period-details">a work in progress.</div>
+                        <a href="#full-timetable-modal" class="modal-trigger btn-flat btn-edit" id="timetable-button">Timetable</a>
+                    </div>
+                </div>
+                <div class="col s12 l4 hide-on-med-and-down">Sentral still hasn't fixed itself.</div>
+            </div>
+
+        <div id="full-timetable-modal" class="modal">
+            <div class="modal-content">
+                <h4 id="editor-title">View timetable</h4>
+                
+            </div>
+        </div>
+
+        <div id="timetable-editor" class="modal">
+            <div class="modal-content">
+                <h4 id="editor-title">Edit timetable</h4>
+                <div id="editor-content">
+                    <div class="clr-bold">Your subjects</div>
+                    <div id="subject-list">
+                        <div class="subject-list-edit">
+                            Add subject
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="timetable-importer" class="modal">
+            <div class="modal-content">
+                <h4 id="importer-title">Import timetable</h4>
+                <div id="parser-import-info">Login to <a
+                        href="https://web3.girraween-h.schools.nsw.edu.au/portal/timetable/mytimetable">Sentral</a>, go to the Timetable
+                    page and click "Export to iCal". Once you've done that, import the file here. </div><br>
+                <input type="file" name="myFile" accept=".ics" onchange="loadICS(event)" />
+                <br><br>
+                <div id="import-timetable">
+                    <h6 class='clr-bold'>Import from cloud</h6>
+                    <p id="import-info">Enter the 4-character code for your timetable if you have uploaded one to the cloud previously.
+                    </p>
+                    <div class="input-field col s12" id="timetable-import">
+                        <input id="import-code" placeholder="Code" type="text" class="validate" maxlength="4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="timetable-settings" class="modal">
+            <div class="modal-content">
+                <h4 id="settings-title">Settings</h4>
+                <span class="clr-bold">Change menubar icon style</span>
+                <form>
+                    <label>
+                        <input class="with-gap" name="radio-logo" type="radio" value ="gradient" checked/>
+                        <span>Gradient</span>
+                    </label>
+                    <br>
+                    <label>
+                        <input class="with-gap" name="radio-logo" type="radio" value="mono"/>
+                        <span>Monochrome</span>
+                    </label>
+                </form>
+                
+            </div>
+        </div>
+
+        <div id="changelog-modal" class="modal">
+            <div class="modal-content">
+                <h4 id="changelog-title">Changelog: 2.0.0 a2</h4>
+                <p id="changelog-info">
+                    <ul>
+                        <li>Added new bell times.</li>
+                        <li>Fixed the Wednesday timing bug (I accidentally made it think the structure was 2:2:1 instead of 2:1:2). Whoops!</li>
+                        <li>Added setting to change menubar logo.</li>
+                        <li>Message me with any bugs you find.</li>
+                    </ul>
+                    <h5 class='clr-bold'>Coming soon:</h5>
+                    <ul>
+                        <li>Timetable support.</li>
+                        <li>Progress bar.</li>
+                        <li>Custom countdowns (towards exams, for example).</li>
+                        <li>Cloud sync.</li>
+                    </ul>
+                    <h5 class='clr-bold'>Never-before asked questions</h5>
+                    <ul>
+                        <li class='clr-bold'>Where'd all the old features go?</li>
+                        <li>I decided to code everything again from scratch, mainly because the old code was designed for a 2:2:2 period structure. The new code is more flexible and allows me to add some features I couldn't before, such as before and after-school periods.</li>
+                        <li class='clr-bold'>Didn't you graduate?</li>
+                        <li>Uh, yes. This was still fun to do.</li>
+                        <li class='clr-bold'>tUtoR me MaThs pLs</li>
+                        <li>DM me for more info about private tutoring at competitive rates ;)</li>
+                        <li class='clr-bold'>Why's it not complete yet? When will it be completed?</li>
+                        <li>Oops! Hopefully in under a week, although don't expect anything new until next week, since I have other commitments.</li>
+                        <li class='clr-bold'>How do I contact you if there's a bug (or about the other thing you mentioned)?</li>
+                        <li>My IG is abiram_en and my Discord tag is Abiram#2452.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect btn-flat">Close</a>
+            </div>
+        </div>
+
+        <!--And here we have a lot of scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/dateandtime.js"></script>
+        <script src="js/bellsandperiods.js"></script>
+        <script src="js/timetable.js"></script>
+        <script src="js/parsetimetable.js"></script>
+        <script src="js/intervalsandpageloads.js"></script>
+        <script src="js/progresscanvas.js"></script>
+        <script src="js/misc.js"></script>
+        <script src="js/localstorage.js"></script>
+    </body>
+</html>
